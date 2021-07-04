@@ -1,0 +1,32 @@
+body {
+    background: #0B3C5D;
+}
+.container {
+    position: absolute;
+    left: 35%;
+    top: 10%;
+    width: 500px;
+    height: 500px;
+    border: #1D2731 4px solid;
+    background-color:#328CC1;
+}
+
+h1 {
+    text-align: center;
+    color: #D9B310;
+    font-weight: bold;
+}
+
+p {
+    font-size: large;
+    color: #D9B310;
+    text-align: center;
+}
+
+#startQuiz {
+    text-align: center;
+    color: #D9B310;
+    font-size: large;
+    margin: 0 0 0 40%;
+    background-color: #1D2731;
+}
