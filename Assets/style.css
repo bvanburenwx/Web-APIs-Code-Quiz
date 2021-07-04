@@ -17,8 +17,18 @@ body {
     background-color: var(--container);
 }
 
+.flexContainer {
+    display: flex;
+}
+
+.timeCounter {
+    margin-left: 75%;
+    color: var(--text);
+}
+
 #highScore {
-    color: ;
+    display: flex;
+    color: var(--text);
 }
 
 .container h1 {
