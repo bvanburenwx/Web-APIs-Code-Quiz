@@ -1,3 +1,9 @@
+:root {
+    --text: #D9B310;
+    --container: #328cc1;
+    --contrast: #1D2731;
+}
+
 body {
     background: #0B3C5D;
 }
@@ -7,26 +13,30 @@ body {
     top: 10%;
     width: 500px;
     height: 500px;
-    border: #1D2731 4px solid;
-    background-color:#328CC1;
+    border: var(--contrast) 4px solid;
+    background-color: var(--container);
 }
 
-h1 {
+#highScore {
+    color: ;
+}
+
+.container h1 {
     text-align: center;
-    color: #D9B310;
+    color: var(--text);
     font-weight: bold;
 }
 
 p {
     font-size: large;
-    color: #D9B310;
+    color: var(--text);
     text-align: center;
 }
 
 #startQuiz {
     text-align: center;
-    color: #D9B310;
+    color: var(--text);
     font-size: large;
     margin: 0 0 0 40%;
-    background-color: #1D2731;
+    background-color: var(--contrast);
 }
