@@ -12,13 +12,13 @@ var quizQuestions = [
     },
     {
         question2: "Inside which HTML element do we put the JavaScript?",
-        choices: ["<js>," "<javascript>", "<style>", "<script>"],
+        choices: ["<js>", "<javascript>", "<style>", "<script>"],
         answer: "<script>"
     },
     {
-        question3: "How do you write "Hello World" in an alert box?", 
-        choices: ["alert("Hello World")", "msg("Hello World")", "confirm("Hello World")", "msgBox("Hello World")"],
-        answer: "alert("Hello World")"
+        question3: 'How do you write "Hello World" in an alert box?', 
+        choices: ['alert("Hello World")','msg("Hello World")','confirm("Hello World")','msgBox("Hello World")'],
+        answer: 'alert("Hello World")'
     },
     {
         question4: "Commonly used data types DO NOT include:", 
@@ -27,7 +27,7 @@ var quizQuestions = [
     },
     {
         question5: "How does a FOR loop start?",
-        choices:["for (i = 0; i <= 5; i++)", "for i = 1 to 5", "for (i = 0; i <= 5)" "for (i <= 5; i++)"],
+        choices:["for (i = 0; i <= 5; i++)", "for i = 1 to 5", "for (i = 0; i <= 5)", "for (i <= 5; i++)"],
         answer: "for (i = 0; i <= 5; i++)"
     },
 ];
