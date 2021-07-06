@@ -43,7 +43,7 @@ p {
     text-align: center;
 }
 
-#startQuiz {
+.startQuiz {
     text-align: center;
     color: var(--text);
     font-size: large;
