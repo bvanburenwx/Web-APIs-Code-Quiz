@@ -10,7 +10,10 @@ var highscoreEl = document.querySelector("#highscore-area");
 var userScore = document.querySelector("#final-score");
 var saveButton = document.getElementById("save-button");
 var userInput = document.getElementById("name");
+var showScore = document.getElementById("show-highscore");
+var listOfHighscores = document.getElementById("list-of-highscores");
 var questionIndex = 0;
+var finalScore = [];
  startQuiz.addEventListener("click", beginQuiz);
 
 
@@ -125,9 +128,24 @@ function showQuestions() {
             getScore.push(savedScore);
             var newScore = JSON.stringify(getScore);
             localStorage.setItem("getScore", newScore); 
+
+            showHighScores();
         }
-        console.log(userName);
     })
+    function showHighScores() {
+        showScore.removeAttribute("class", "hide");
+
+            var getScore = localStorage.getItem("getScore")
+
+            var storedHighscore = JSON.parse(getScore);
+
+            for (i = 0, i < storedHighscore.length; i++;) {
+                var newHighscore = document.createElement("p")
+                newHighscore.innerHTML = storedHighscore[i].Name + ": " + storedHighscore[i].score;
+                listOfHighscores.appendChild(newHighscore);
+            }      
+            console.log(newHighscore);
+    }
 
 // variable array for questions and answers.
 var quizQuestions = [
@@ -158,4 +176,3 @@ var quizQuestions = [
         answer: "for (i = 0; i <= 5; i++)"
     },
 ];
-
