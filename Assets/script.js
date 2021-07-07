@@ -8,11 +8,14 @@ var quizPortion = document.querySelector("#quiz-area");
 var rightWrongEl = document.querySelector("#right-wrong");
 var highscoreEl = document.querySelector("#highscore-area");
 var userScore = document.querySelector("#final-score");
+var saveButton = document.getElementById("save-button");
+var userInput = document.getElementById("name");
 var questionIndex = 0;
  startQuiz.addEventListener("click", beginQuiz);
 
 
-function beginQuiz(){
+// quiz start function that takes in account several other function to make things show up and disappear (worked with tutor on this)
+ function beginQuiz(){
 setTime();
 startScreen.setAttribute("class", "hide");
 startQuiz.setAttribute("class", "hide");
@@ -35,7 +38,7 @@ function setTime() {
         } 
     }, 1000);
 }
-
+// function to append the questions to the same div that the title screen showed up. (worked with tutor)
 function showQuestions() {
    var currentQuestion = quizQuestions[questionIndex];
 
@@ -43,7 +46,7 @@ function showQuestions() {
    titleEl.textContent = currentQuestion.question;
 
     choicesEl.innerHTML = "";
-
+// used a foreach function to cycle through the questions until they were all answered by user. (worked with tutor)
     currentQuestion.choices.forEach(function(choice, i){
 
      var choiceButton = document.createElement('button');
@@ -57,7 +60,7 @@ function showQuestions() {
      choicesEl.appendChild(choiceButton);
     })
  }
-
+// function to compare user answers with answer key and display correct or wrong based off the input. (Tutor helped)
  function compare() {
      if (this.value !== quizQuestions[questionIndex].answer) {
          secondsLeft -= 15;
@@ -87,7 +90,8 @@ function showQuestions() {
         } 
     }
  console.log(compare);
-
+// function to removed questions and save the time that was left and display as user score.
+// function also hide the question screen and displays the highscore screen. 
     function finishQuiz () {
 
         highscoreEl.setAttribute("class", "score-show");
@@ -97,10 +101,34 @@ function showQuestions() {
         quizPortion.setAttribute("class", "hide");
 
         timeEL.setAttribute("class", "hide");
-
+        console.log(secondsLeft);
     }
 
-    console.log(finishQuiz);
+    saveButton.addEventListener("click", function () {
+        var userName = userInput.value;
+
+        if (userName === "") {
+
+           alert("Please enter a name");
+        } else {
+            var savedScore = {
+                Name: userName,
+                score: secondsLeft + 1
+            }
+            console.log(savedScore);
+            var getScore = localStorage.getItem("getScore")
+            if (getScore === null) {
+                getScore = [];
+            } else {
+                getScore = JSON.parse(getScore);
+            }
+            getScore.push(savedScore);
+            var newScore = JSON.stringify(getScore);
+            localStorage.setItem("getScore", newScore); 
+        }
+        console.log(userName);
+    })
+
 // variable array for questions and answers.
 var quizQuestions = [
     {
