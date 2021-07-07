@@ -5,6 +5,7 @@ var createList = document.createElement("ul");
 var startScreen = document.getElementById("startScreen");
 var questions = document.querySelector("#quizQuestions");
 var quizScreen = document.querySelector("#quiz-area");
+var rightWrongEl = document.querySelector("#right-wrong");
 var questionIndex = 0;
  startQuiz.addEventListener("click", beginQuiz);
 
@@ -49,10 +50,37 @@ function showQuestions() {
      
      choiceButton.textContent = i + 1 + ". " + choice;
 
+     choiceButton.onclick = compare;
+
      choicesEl.appendChild(choiceButton);
     })
  }
- console.log(showQuestions);
+
+ function compare() {
+     if (this.value !== quizQuestions[questionIndex].answer) {
+         secondsLeft -= 15;
+
+         if (secondsLeft < 0) {
+             secondsLeft = 0;
+         }
+
+         timeEL.textContent = secondsLeft;
+
+         rightWrongEl.textContent = "Sorry, Wrong Answer!";
+        } else {
+            rightWrongEl.textContent = "Good Job, That is Correct!";
+        }
+
+        rightWrongEl.setAttribute("class", "rightWrong");
+        setTimeout(function() {
+            rightWrongEl.setAttribute("class", "rightWrong-hide");
+        }, 500);
+
+        questionIndex++;
+
+        showQuestions();
+ }
+ console.log(compare);
 // variable array for questions and answers.
 var quizQuestions = [
     {

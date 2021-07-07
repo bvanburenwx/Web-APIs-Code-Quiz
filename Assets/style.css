@@ -59,3 +59,15 @@ p {
     margin: 0 0 0 40%;
     background-color: var(--contrast);
 }
+
+#question-title {
+    color: var(--text);
+    font-size: x-large;
+}
+
+.choice {
+    background-color: #0B3C5D;
+    color: var(--text);
+    font-size: x-large;
+    border-color: var(--contrast);
+}
