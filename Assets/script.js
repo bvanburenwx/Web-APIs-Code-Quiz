@@ -139,12 +139,13 @@ function showQuestions() {
 
             var storedHighscore = JSON.parse(getScore);
 
-            for (i = 0, i < storedHighscore.length; i++;) {
+            for (i = 0; i < storedHighscore.length; i++) {
                 var newHighscore = document.createElement("p")
                 newHighscore.innerHTML = storedHighscore[i].Name + ": " + storedHighscore[i].score;
                 listOfHighscores.appendChild(newHighscore);
+                console.log(storedHighscore[i]);
             }      
-            console.log(newHighscore);
+            
     }
 
 // variable array for questions and answers.
