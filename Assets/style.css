@@ -71,3 +71,16 @@ p {
     font-size: x-large;
     border-color: var(--contrast);
 }
+
+ label {
+    font-size: x-large;
+    color: var(--text);
+}
+
+#save-button {
+    text-align: center;
+    color: var(--text);
+    font-size: large;
+    margin: 25px 0 0 40%;
+    background-color: var(--contrast);
+}

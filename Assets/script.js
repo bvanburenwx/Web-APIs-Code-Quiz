@@ -89,13 +89,14 @@ function showQuestions() {
  console.log(compare);
 
     function finishQuiz () {
-        clearInterval(timerInterval);
 
         highscoreEl.setAttribute("class", "score-show");
 
         userScore.textContent = secondsLeft;
 
         quizPortion.setAttribute("class", "hide");
+
+        timeEL.setAttribute("class", "hide");
 
     }
 
