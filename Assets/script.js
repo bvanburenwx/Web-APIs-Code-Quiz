@@ -4,8 +4,10 @@ var choicesEl = document.getElementById("questionChoices");
 var createList = document.createElement("ul");
 var startScreen = document.getElementById("startScreen");
 var questions = document.querySelector("#quizQuestions");
-var quizScreen = document.querySelector("#quiz-area");
+var quizPortion = document.querySelector("#quiz-area");
 var rightWrongEl = document.querySelector("#right-wrong");
+var highscoreEl = document.querySelector("#highscore-area");
+var userScore = document.querySelector("#final-score");
 var questionIndex = 0;
  startQuiz.addEventListener("click", beginQuiz);
 
@@ -14,7 +16,7 @@ function beginQuiz(){
 setTime();
 startScreen.setAttribute("class", "hide");
 startQuiz.setAttribute("class", "hide");
-quizScreen.setAttribute("class", "show")
+quizPortion.setAttribute("class", "show")
 questions.removeAttribute("class");
 // choices.removeAttribute("class");
 showQuestions();
@@ -78,9 +80,26 @@ function showQuestions() {
 
         questionIndex++;
 
-        showQuestions();
- }
+        if (questionIndex === quizQuestions.length) {
+            finishQuiz();
+        } else {
+            showQuestions();
+        } 
+    }
  console.log(compare);
+
+    function finishQuiz () {
+        clearInterval(timerInterval);
+
+        highscoreEl.setAttribute("class", "score-show");
+
+        userScore.textContent = secondsLeft;
+
+        quizPortion.setAttribute("class", "hide");
+
+    }
+
+    console.log(finishQuiz);
 // variable array for questions and answers.
 var quizQuestions = [
     {
