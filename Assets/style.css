@@ -21,7 +21,7 @@ body {
     display: flex;
 }
 
-.timeCounter {
+#timeCounter {
     margin-left: 85%;
     color: var(--text);
 }
@@ -32,6 +32,10 @@ body {
 }
 .hide{
     display: none;
+}
+
+.show{
+    display: block
 }
 /* .choice{
     display: block;

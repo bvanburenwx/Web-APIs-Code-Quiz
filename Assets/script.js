@@ -1,13 +1,10 @@
-// select element by class for the timer 
-var timeEL = document.querySelector(".timeCounter");
-// select element by ID for the startQuiz bttn. 
+var timeEL = document.getElementById("timeCounter");
 var startQuiz = document.querySelector(".startQuiz");
-// selecting the questions element from HTML 
-var choices = document.getElementById("questionChoices");
-// selecting the ul element to display the questions from the questions array
+var choicesEl = document.getElementById("questionChoices");
 var createList = document.createElement("ul");
 var startScreen = document.getElementById("startScreen");
 var questions = document.querySelector("#quizQuestions");
+var quizScreen = document.querySelector("#quiz-area");
 var questionIndex = 0;
  startQuiz.addEventListener("click", beginQuiz);
 
@@ -16,38 +13,46 @@ function beginQuiz(){
 setTime();
 startScreen.setAttribute("class", "hide");
 startQuiz.setAttribute("class", "hide");
+quizScreen.setAttribute("class", "show")
 questions.removeAttribute("class");
 // choices.removeAttribute("class");
 showQuestions();
+}
 
+var secondsLeft = 76
+var timerInterval = 0
+
+function setTime() {
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timeEL.textContent = secondsLeft + " seconds left.";
+
+        if(secondsLeft <= 0 || questionIndex === quizQuestions.length) {
+            clearInterval(timerInterval);
+        } 
+    }, 1000);
 }
 
 function showQuestions() {
-   var currentQuestion = quizQuestions[questionIndex].question;
-   var currentChoices = quizQuestions[questionIndex].choices;
+   var currentQuestion = quizQuestions[questionIndex];
 
-    questions.innerHTML = currentQuestion;
-    // choices.innerHTML = currentChoices;
+   var titleEl = document.getElementById("question-title");
+   titleEl.textContent = currentQuestion.question;
 
- for (var i = 0; i < currentChoices.length; i++) {
-    console.log(currentChoices[i])
+    choicesEl.innerHTML = "";
+
+    currentQuestion.choices.forEach(function(choice, i){
+
      var choiceButton = document.createElement('button');
      choiceButton.setAttribute("class", "choice");
-    choiceButton.setAttribute("value", currentChoices[i]) 
-     choiceButton.textContent = i + 1 + " " + currentChoices[i];
+     choiceButton.setAttribute("value", choice);
+     
+     choiceButton.textContent = i + 1 + ". " + choice;
 
-    var blah = choices.appendChild(choiceButton);
-    choices.innerHTML = blah;
-
-console.log(blah);
+     choicesEl.appendChild(choiceButton);
+    })
  }
-
-
- 
-}
-
-var questionNumber = 0;
-
+ console.log(showQuestions);
 // variable array for questions and answers.
 var quizQuestions = [
     {
@@ -77,19 +82,4 @@ var quizQuestions = [
         answer: "for (i = 0; i <= 5; i++)"
     },
 ];
-
-var secondsLeft = 76;
-var startInterval = 0
-
-
-function setTime() {
-    var timerInterval = setInterval(function() {
-        secondsLeft--;
-        timeEL.textContent = secondsLeft + " seconds left.";
-
-        if(secondsLeft <= 0 || questionNumber === quizQuestions.length) {
-            clearInterval(timerInterval);
-        } 
-    }, 1000);
-}
 

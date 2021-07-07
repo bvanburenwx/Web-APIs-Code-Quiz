@@ -11,9 +11,10 @@
 <body>
     <header class="flexContainer">
         <h2 id="highScore">View Highscores</h2>
-        <h2 class="timeCounter"></h2>
+        <h2 id="timeCounter"></h2>
     </header>
-    <section>
+
+    <section id="title" class="show">
         <div class="container">
             <div id="startScreen">
                 <h1>Code Quiz</h1>
@@ -21,12 +22,20 @@
                     Once you hit start quiz, the timer will start. Time will be reduced by 5 seconds for every wrong answer. Good Luck!
                 </p>
             </div>
-            <div id="quizQuestions" class="hide"></div>
-            <div id="questionChoices" class="hide"></div>
-        
-
             <button class="startQuiz">Start Quiz</button>
+            <div id="quiz-area" class="hide">
+                <div id="quizQuestions"></div>
+                    <h3 id="question-title"></h3>
+                <div id="questionChoices"></div>
+            </div>
         </div>
+       
+    </section>
+    
+    
+
+    <section id="highscore">
+
     </section>
     <script src="./Assets/script.js"></script>
 </body>
