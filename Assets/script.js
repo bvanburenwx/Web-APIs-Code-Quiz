@@ -3,12 +3,48 @@ var timeEL = document.querySelector(".timeCounter");
 // select element by ID for the startQuiz bttn. 
 var startQuiz = document.querySelector(".startQuiz");
 // selecting the questions element from HTML 
-var questions = document.querySelector("#questionChoices");
+var choices = document.getElementById("questionChoices");
 // selecting the ul element to display the questions from the questions array
 var createList = document.createElement("ul");
+var startScreen = document.getElementById("startScreen");
+var questions = document.querySelector("#quizQuestions");
+var questionIndex = 0;
+ startQuiz.addEventListener("click", beginQuiz);
 
-startQuiz.addEventListener("click", setTime);
 
+function beginQuiz(){
+setTime();
+startScreen.setAttribute("class", "hide");
+startQuiz.setAttribute("class", "hide");
+questions.removeAttribute("class");
+// choices.removeAttribute("class");
+showQuestions();
+
+}
+
+function showQuestions() {
+   var currentQuestion = quizQuestions[questionIndex].question;
+   var currentChoices = quizQuestions[questionIndex].choices;
+
+    questions.innerHTML = currentQuestion;
+    // choices.innerHTML = currentChoices;
+
+ for (var i = 0; i < currentChoices.length; i++) {
+    console.log(currentChoices[i])
+     var choiceButton = document.createElement('button');
+     choiceButton.setAttribute("class", "choice");
+    choiceButton.setAttribute("value", currentChoices[i]) 
+     choiceButton.textContent = i + 1 + " " + currentChoices[i];
+
+    var blah = choices.appendChild(choiceButton);
+    choices.innerHTML = blah;
+
+console.log(blah);
+ }
+
+
+ 
+}
 
 var questionNumber = 0;
 
@@ -17,7 +53,8 @@ var quizQuestions = [
     {
         question: "What does DOM stand for?",
         choices:["Distributed Object Management", "Document Object Model", "Digital Output Module", "Document Object Management"],
-        answer: "Document Object Model"
+        answer: "Document Object Model",
+        userAnswer: ""
     },
     {
         question: "Inside which HTML element do we put the JavaScript?",
@@ -52,7 +89,7 @@ function setTime() {
 
         if(secondsLeft <= 0 || questionNumber === quizQuestions.length) {
             clearInterval(timerInterval);
-            getScore()
         } 
     }, 1000);
 }
+

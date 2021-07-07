@@ -30,7 +30,12 @@ body {
     display: flex;
     color: var(--text);
 }
-
+.hide{
+    display: none;
+}
+/* .choice{
+    display: block;
+} */
 .container h1 {
     text-align: center;
     color: var(--text);
