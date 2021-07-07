@@ -38,6 +38,7 @@ function setTime() {
 
         if(secondsLeft <= 0 || questionIndex === quizQuestions.length) {
             clearInterval(timerInterval);
+            finishQuiz();
         } 
     }, 1000);
 }
@@ -104,6 +105,8 @@ function showQuestions() {
         quizPortion.setAttribute("class", "hide");
 
         timeEL.setAttribute("class", "hide");
+
+        showScore.removeAttribute("class", "hide");
         console.log(secondsLeft);
     }
 
@@ -116,7 +119,7 @@ function showQuestions() {
         } else {
             var savedScore = {
                 Name: userName,
-                score: secondsLeft + 1
+                score: secondsLeft 
             }
             console.log(savedScore);
             var getScore = localStorage.getItem("getScore")
@@ -133,8 +136,7 @@ function showQuestions() {
         }
     })
     function showHighScores() {
-        showScore.removeAttribute("class", "hide");
-
+    
             var getScore = localStorage.getItem("getScore")
 
             var storedHighscore = JSON.parse(getScore);
