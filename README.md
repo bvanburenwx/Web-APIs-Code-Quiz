@@ -21,8 +21,12 @@ The process will continue until all questions are answered either correctly or i
 
 ![Question 5](https://user-images.githubusercontent.com/83733566/124850797-4bbd6780-df6f-11eb-95ad-b78906251864.png)
 
-Once the end screen displays it will show the user their score and will give them the option to enter their name and save the score. The user is required to enter something in the input area or they will receive an alert message explaining that a name must be entered. 
+Once the end screen displays it will show the user their score and will give them the option to enter their name and save the score. The user is required to enter something in the input area or they will receive an alert message explaining that a name must be entered. Once the user enters their name and clicks the save score button. Their name and score will then be displayed below the save score button. 
 
 ![end quiz screen](https://user-images.githubusercontent.com/83733566/124850990-aa82e100-df6f-11eb-85ef-0569c18a28fe.png)
+
+![alert message](https://user-images.githubusercontent.com/83733566/124851199-1107ff00-df70-11eb-98e7-fe0d74d00244.png)
+
+At this point the quiz is complete. 
 
 
