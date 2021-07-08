@@ -24,13 +24,12 @@ startScreen.setAttribute("class", "hide");
 startQuiz.setAttribute("class", "hide");
 quizPortion.setAttribute("class", "show")
 questions.removeAttribute("class");
-// choices.removeAttribute("class");
 showQuestions();
 }
 
 var secondsLeft = 76
 var timerInterval = 0
-
+// function that sets the timer and is called in the beginquiz function
 function setTime() {
     var timerInterval = setInterval(function() {
         secondsLeft--;
@@ -109,7 +108,7 @@ function showQuestions() {
         showScore.removeAttribute("class", "hide");
         console.log(secondsLeft);
     }
-
+// adding an eventlistener to the click of the save button at the end of the quiz. This saves the score of the user to local storage. and then calls the show score function
     saveButton.addEventListener("click", function () {
         var userName = userInput.value;
 
@@ -135,6 +134,7 @@ function showQuestions() {
             showHighScores();
         }
     })
+    // This function takes the scores saved in the local storage and appends it to the page in the selected area.
     function showHighScores() {
     
             var getScore = localStorage.getItem("getScore")

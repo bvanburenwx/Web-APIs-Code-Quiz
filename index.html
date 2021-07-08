@@ -14,7 +14,9 @@
     </header>
 
     <section id="title" class="show">
+        <!-- Container to hold the quiz elements -->
         <div class="container">
+            <!-- Start Screen will show up once the page is loaded, but will then hide dynamically once the start quiz button is pressed -->
             <div id="startScreen">
                 <h1>Code Quiz</h1>
                 <p>Please answer the following questions to the best of your ability before the time runs out. 
@@ -22,12 +24,14 @@
                 </p>
             </div>
             <button class="startQuiz">Start Quiz</button>
+            <!-- This is the quiz questions section and is hidden on page load, but will appear once start quiz button is pressed -->
             <div id="quiz-area" class="hide">
                 <div id="quizQuestions"></div>
                     <h3 id="question-title"></h3>
                 <div id="questionChoices"></div>
                 <div id="right-wrong"></div>
             </div>
+            <!-- This is the highscore and end quiz screen, which is hidden on page open, but will appear when the questions are finished being answered -->
             <div id="highscore-area" class="hide">
                 <div id="highscore"></div>
                     <p>You have completed the quiz</p>
