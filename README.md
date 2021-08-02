@@ -4,6 +4,10 @@ This is a quiz that will test the Javascript knowledge of the user taking the qu
 with a box that explains the rules of the quiz. The box discusses the instructions of the quiz and the penalties of gettings questions wrong. The 
 first screen the user will come to is below. 
 
+---
+
+## Screenshots and Process 
+
 ![Start Quiz Screen](https://user-images.githubusercontent.com/83733566/124850384-8541a300-df6e-11eb-992d-c871ecc345cd.png)
 
 The user will then hit the Start Quiz button and the quiz will then begin. The first question will show and a timer will appear in the upper right corner of 
@@ -29,6 +33,16 @@ Once the end screen displays it will show the user their score and will give the
 
 At this point the quiz is complete. 
 
-A link to the deployed site is below. 
+---
 
-https://bvanburenwx.github.io/Web-APIs-Code-Quiz/
+## Technologies 
+* HTML
+* Javascript
+* CSS
+* Local Storage
+
+---
+
+## A link to the deployed site is below. 
+
+[Code Quiz](https://bvanburenwx.github.io/Web-APIs-Code-Quiz/)
